@@ -1,7 +1,7 @@
 import numpy as np 
 from numba import njit, jit
 from dmcpy.sample import hemisphere, annulus
-from dmcpy.potential import disk as v_disk
+from dmcpy.potential import ccplate as v_disk
 
 # Surface charge density on a disk
 # Number of sampling --> n
@@ -9,7 +9,7 @@ from dmcpy.potential import disk as v_disk
 # Point of investigtion, Radius of LP-hemisphere  --> r1, [0, x1, y1, z1] 
 # --> Charge density 
 @njit('float64(uint32, float64[::1], float64, float64[::1], float64)')
-def disk(n, p0, r0, p1, r1):
+def ccplate(n, p0, r0, p1, r1):
     distance = np.linalg.norm(p1 - p0)
     r_in = r0 - distance
 

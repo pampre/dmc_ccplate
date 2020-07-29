@@ -5,7 +5,7 @@ from dmcpy.randwk import wop_z, bts, wos
 # Disk Diffusion
 # Current position, Center of disk, Radius of disk --> Spherical Surface
 @njit('float64[::1](float64[::1], float64[::1], float64)')
-def disk(p, p0, a0):
+def ccplate(p, p0, a0):
     
     z = p[3]
     z0 = p0[3]
