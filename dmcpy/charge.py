@@ -53,7 +53,7 @@ def ccplate(n, p0, r0, p1, r1):
                     sigma2 += (s_inv_3 - r1_inv_3)    
             sigma2 *= (r1*r1 - r_in*r_in) / 16. 
 
-            sigma = (sigma1 + sigma2) / n
+            sigma = (sigma1 + sigma2)
 
             return sigma
 
@@ -63,7 +63,7 @@ if __name__ == '__main__':
     p1 = np.array([0., 0., 0., 0.])
     p0 = np.array([0., 0., 0., 0.])
     t0 = time()
-    charge = disk(n, p0, 1., p1, 2.)
+    charge = ccplate(n, p0, 1., p1, 2.)
     t1 = time()
     print("Number: {}".format(n))
     print("Charge: {}".format(charge))
